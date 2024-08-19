@@ -125,5 +125,11 @@ public class DeliveryController {
         return "menu";
     }
 
+    @GetMapping("/nothing")
+    public String hello(){
+        return "nothing";
+
+    }
+
 
 }
