@@ -1,0 +1,117 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en" xmlns:th="http://www.thymeleaf.org">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+<!--    <title>Login</title>-->
+<!--    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">-->
+<!--</head>-->
+<!--<body>-->
+<!--<div class="container">-->
+<!--    <h1>Login</h1>-->
+<!--    <form th:action="@{/logins}" th:object="${users}" method="post">-->
+<!--        <div class="form-group">-->
+<!--            <label for="username">Username</label>-->
+<!--            <input type="text" id="username" th:field="*{username}">-->
+<!--        </div>-->
+<!--        <div class="form-group">-->
+<!--            <label for="password">Password</label>-->
+<!--            <input type="password" id="password" th:field="*{password}">-->
+<!--        </div>-->
+<!--        <div class="form-group">-->
+<!--            <button type="submit">Login</button>-->
+<!--        </div>-->
+<!--        <div th:if="${error}" class="error-message">-->
+<!--            <p th:text="${error}"></p>-->
+<!--        </div>-->
+<!--    </form>-->
+<!--</div>-->
+<!--</body>-->
+<!--</html>-->
+
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f7f7f7;
+            font-family: 'Arial', sans-serif;
+        }
+        .container {
+            max-width: 400px;
+            margin-top: 10%;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            font-weight: bold;
+            margin-bottom: 30px;
+            color: #333;
+            text-align: center;
+        }
+        .form-group label {
+            font-weight: 600;
+            color: #555;
+        }
+        .form-group input {
+            border-radius: 25px;
+            padding: 10px 20px;
+            border: 1px solid #ddd;
+            font-size: 16px;
+            color: #333;
+            width: 100%;
+        }
+        .form-group input:focus {
+            border-color: #007BFF;
+            box-shadow: none;
+        }
+        .form-group button {
+            width: 100%;
+            padding: 12px;
+            background-color: #007BFF;
+            border: none;
+            color: white;
+            font-size: 18px;
+            border-radius: 25px;
+            margin-top: 20px;
+        }
+        .form-group button:hover {
+            background-color: #0056b3;
+        }
+        .error-message p {
+            color: red;
+            font-weight: bold;
+            margin-top: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Login</h1>
+    <form th:action="@{/logins}" th:object="${users}" method="post">
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" id="username" th:field="*{username}" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" th:field="*{password}" class="form-control">
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary">Login</button>
+        </div>
+        <div th:if="${error}" class="error-message">
+            <p th:text="${error}"></p>
+        </div>
+    </form>
+</div>
+</body>
+</html>

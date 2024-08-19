@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant List</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container mt-5">
+    <!-- Top banner -->
+    <div class="row mb-4">
+        <div class="col-12">
+            <img src="https://consumer-static-assets.wolt.com/frontpage-assets/hero-images/5_Friday@2x.jpg" class="img-fluid" alt="Wolt+ Banner">
+        </div>
+    </div>
+
+    <!-- Section title -->
+    <div class="row mb-4">
+        <div class="col-12">
+            <h2 class="font-weight-bold">Обед неподалёку</h2>
+        </div>
+    </div>
+
+    <!-- Restaurants list -->
+    <div class="row">
+        <div th:each="restaurant : ${restaurants}" class="col-lg-3 col-md-6 mb-4">
+            <a th:href="@{'/restaurant/' + ${restaurant.id}}" class="text-decoration-none">
+            <div class="card shadow-sm">
+                <div class="position-relative">
+
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title" th:text="${restaurant.restaurantName}">Restaurant Name</h5>
+                    <p class="card-text text-muted" th:text="${restaurant.restaurantDescription}">Restaurant Description</p>
+                    <p class="card-text text-muted" th:text="${restaurant.restaurantRating}">Restaurant Description</p>
+                    <div class="d-flex justify-content-between align-items-center">
+
+                    </div>
+                </div>
+            </div>
+            </a>
+        </div>
+    </div>
+
+    <!-- Navigation buttons -->
+    <div class="row mt-4">
+        <div class="col-12 d-flex justify-content-between">
+            <a href="#" class="btn btn-light">&larr; Назад</a>
+            <a href="#" class="btn btn-light">Вперед &rarr;</a>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
