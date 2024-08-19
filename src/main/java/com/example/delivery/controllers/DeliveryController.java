@@ -127,7 +127,7 @@ public class DeliveryController {
 
     @GetMapping("/nothing")
     public String hello(){
-        return "we have changed";
+        return "new commit";
 
     }
 
