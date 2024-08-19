@@ -128,7 +128,6 @@ public class DeliveryController {
     @GetMapping("/nothing")
     public String hello(){
         return "new commit";
-
     }
 
 
